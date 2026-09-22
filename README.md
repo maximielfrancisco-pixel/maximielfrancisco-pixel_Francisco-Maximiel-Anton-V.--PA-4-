@@ -66,3 +66,47 @@ contains 5 rows.
 Electronics, and Average were retained.
 
 ---
+
+### 2) Problem 2: Visayas Female DataFrame - Filters female students from Visayas and then identifies those with an Average of at least 60.
+
+```python
+# Filter students whose Hometown is Visayas and whose Gender is Female
+VisFemale = ECE.loc[
+    (ECE['Hometown'] == 'Visayas')& 
+    (ECE['Gender'] == 'Female'),
+    ['Name', 'Track', 'GEAS', 'Electronics', 'Average']]
+
+VisFemale3
+# Display only VisFemale rows whose Average is at least 60
+VisFemale.loc[VisFemale['Average'] >= 60]
+VisComm
+```
+##### Step-by-Step Procedure of Functions:
+- `ECE.loc[...]` → selects the required rows and columns from the
+original ECE DataFrame.
+- `(ECE['Hometown'] == 'Visayas')` → filters the dataset to students
+whose Hometown is Visayas.
+- `(ECE['Gender'] == 'Female')` → filters the dataset to female
+students.
+- `&` → combines both conditions so that a student must satisfy both
+conditions.
+- `['Name', 'Track', 'GEAS', 'Electronics', 'Average']` → selects only
+the required columns.
+- `VisFemale` → stores and displays the resulting Visayas Female
+DataFrame.
+- `VisFemale.loc[VisFemale['Average'] >= 60]` → displays only the rows
+whose Average is at least 60 without changing the original VisFemale
+DataFrame.
+
+Outcome:
+- The VisFemale DataFrame contains female students whose
+Hometown is Visayas.
+- The required columns Name, Track, GEAS,
+Electronics, and Average were retained.
+- The VisFemale DataFrame contains 6 rows.
+- 4 of the VisFemale students have an Average of at
+least 60. - The second filter does not overwrite VisFemale.
+
+---
+
+### 3) Problem 3: Category-Average Visualization - Computes the mean Average for Track, Gender, and Hometown and compares the results using bar charts.
